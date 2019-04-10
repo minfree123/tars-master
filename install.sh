@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=$PATH:/usr/local/mysql/bin
+
 MachineIp=$(ip addr | grep inet | grep ${INET_NAME} | awk '{print $2;}' | sed 's|/.*$||')
 MachineName=$(cat /etc/hosts | grep ${MachineIp} | awk '{print $2}')
 
@@ -140,4 +142,4 @@ build_cpp_framework
 
 install_base_services
 
-build_web_mgr
+#build_web_mgr

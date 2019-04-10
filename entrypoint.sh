@@ -19,7 +19,8 @@ case ${1} in
 	start)
 		source /etc/profile
 		cd /usr/local/app/tars && ./tars_install.sh
-		exec /usr/local/resin/bin/resin.sh console
+        ./web/start.sh	
+		tail -f /dev/null
 		;;
 	*)
 		exec "$@"
